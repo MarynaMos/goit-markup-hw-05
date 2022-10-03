@@ -241,7 +241,32 @@
                         </li>
                     </ul>
                 </div>
+                <div class="footer-mailing">
+                    <p class="subscription">Підпишіться на розсилку</p>
+                    <form class="mailing">
+                        <label for="mail"></label>
+                        <input class="foooter-input" type="mail" name="mail" placeholder="E-mail">
+                        <button class="btn-mailing" type="button">Підписатися<svg class="icon-send" viewBox="0 0 32 32" width="24"
+                                height="24">
+                                <use a href="./images/sprite.svg#icon-send"></use>
+                            </svg></button>
+                
+                    </form>
+                </div>
             </div>
         </footer>
+        <script>
+            (() => {
+                document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+
+                    e.currentTarget.reset();
+                });
+            })();
+        </script>
 </body>
 </html>
